@@ -3,30 +3,29 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "postinstall": "fumadocs-mdx",
     "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
-    "postinstall": "fumadocs-mdx"
+    "deploy": "next build && touch out/.nojekyll && gh-pages -d out -b gh-pages"
   },
   "dependencies": {
-    "fumadocs-core": "16.7.7",
-    "fumadocs-mdx": "14.2.11",
-    "fumadocs-ui": "16.7.7",
+    "fumadocs-core": "latest",
+    "fumadocs-mdx": "latest",
+    "fumadocs-ui": "latest",
     "lucide-react": "^1.7.0",
-    "next": "16.2.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "tailwind-merge": "^3.5.0"
+    "next": "latest",
+    "next-themes": "^0.4.6",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "^25.5.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.8",
-    "tailwindcss": "^4.2.2",
-    "typescript": "^6.0.2"
+    "typescript": "latest"
   }
 }
